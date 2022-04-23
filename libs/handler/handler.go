@@ -10,10 +10,12 @@ func CommonHandler() {
 	http.HandleFunc("/test", HandlerTest)
 	http.HandleFunc("/add", HandlerAdd)
 	http.HandleFunc("/lookup", HandlerLookup)
+	http.HandleFunc("/login", HandlerLogin)
 }
 
 func HandlerBuild(w http.ResponseWriter, r *http.Request) {
 	log.Println("handler build")
+	HandlerBuildImpl(w, r)
 }
 
 func HandlerTest(w http.ResponseWriter, r *http.Request) {
@@ -26,4 +28,8 @@ func HandlerAdd(w http.ResponseWriter, r *http.Request) {
 
 func HandlerLookup(w http.ResponseWriter, r *http.Request) {
 	log.Println("handler lookup")
+}
+
+func HandlerLogin(w http.ResponseWriter, r *http.Request) {
+	log.Println("handler login")
 }
