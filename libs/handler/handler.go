@@ -32,4 +32,5 @@ func HandlerLookup(w http.ResponseWriter, r *http.Request) {
 
 func HandlerLogin(w http.ResponseWriter, r *http.Request) {
 	log.Println("handler login")
+	HandlerLoginImpl(w, r)
 }
